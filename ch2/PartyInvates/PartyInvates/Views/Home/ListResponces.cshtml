@@ -1,0 +1,42 @@
+﻿@model IEnumerable<GuestResponse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+
+<h2>Список присутствующих</h2>
+
+<table>
+    <thead>
+    <th>Имя</th>
+    <th>Почта</th>
+    <th>Телефон</th>
+    </thead>
+
+    <tbody>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.Name</td>
+            <td>@a.Email</td>
+            <td>@a.Phone</td>
+
+        </tr>
+    }
+    </tbody>
+
+</table>
+
+<div>
+
+</div>
+</body>
+</html>

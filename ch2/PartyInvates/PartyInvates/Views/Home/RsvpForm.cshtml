@@ -1,0 +1,40 @@
+﻿@model GuestResponse
+
+@{
+    ViewBag.Title = "GuestResponse";
+    Layout = null;
+}
+
+<div>Это представление для GuestResponse</div>
+
+<form asp-action="RsvpForm" method="post">
+    <p>
+        <label asp-for="Name">Ваше имя</label>
+        <input asp-for="Name"/>
+    </p>
+
+    <p>
+        <label asp-for="Email">Ваш Email</label>
+        <input asp-for="Email"/>
+    </p>
+
+
+    <p>
+        <label asp-for="Phone">Ваш Почтовый ящик</label>
+        <input asp-for="Phone"/>
+    </p>
+
+
+    <p>
+        <label>Вы придете ?</label>
+        <select asp-for="WillAttend">
+            <option value="">Выберете опцию</option>
+            <option value="true">Да, я буду</option>
+            <option value="false">Нет, не приду</option>
+        </select>
+    </p>
+    
+    <button type="submit"> Активировать запрос</button>
+
+
+</form>

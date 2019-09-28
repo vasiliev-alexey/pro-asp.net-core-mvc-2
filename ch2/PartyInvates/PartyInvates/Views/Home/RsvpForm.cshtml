@@ -6,35 +6,64 @@
 }
 
 <div>Это представление для GuestResponse</div>
+<!DOCTYPE html>
 
-<form asp-action="RsvpForm" method="post">
-    <p>
-        <label asp-for="Name">Ваше имя</label>
-        <input asp-for="Name"/>
-    </p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
 
-    <p>
-        <label asp-for="Email">Ваш Email</label>
-        <input asp-for="Email"/>
-    </p>
+@*<div class=".card">*@
+    <div class="card-header text-center">
+        <h4>RSVP</h4>
+    </div>
+    @*<div class="card-body">*@
+
+        <form  asp-action="RsvpForm" method="post">
+            @*Вставка блока с ошибками валидации*@
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Name">Ваше имя</label>
+                <input  type="text"  class="form-control" asp-for="Name"/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">Ваш Email</label>
+                <input  type="text"  class="form-control" asp-for="Email"/>
+            </div>
 
 
-    <p>
-        <label asp-for="Phone">Ваш Почтовый ящик</label>
-        <input asp-for="Phone"/>
-    </p>
+            <div class="form-group">
+                <label asp-for="Phone">Ваш Телефон</label>
+                <input  type="text"  class="form-control" asp-for="Phone"/>
+            </div>
 
 
-    <p>
-        <label>Вы придете ?</label>
-        <select asp-for="WillAttend">
-            <option value="">Выберете опцию</option>
-            <option value="true">Да, я буду</option>
-            <option value="false">Нет, не приду</option>
-        </select>
-    </p>
-    
-    <button type="submit"> Активировать запрос</button>
+            <div class="form-group">
+                <label>Вы придете ?</label>
+                <select class="form-control" asp-for="WillAttend">
+                    <option value="">Выберете опцию</option>
+                    <option value="true">Да, я буду</option>
+                    <option value="false">Нет, не приду</option>
+                </select>
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">
+                    Активировать запрос
+                </button>
+            </div>
+
+           
 
 
-</form>
+        </form>
+
+    @*</div>*@
+@*</div>*@
+</body>
+</html>

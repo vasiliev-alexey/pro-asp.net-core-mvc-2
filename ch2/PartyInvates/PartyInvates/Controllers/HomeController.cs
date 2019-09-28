@@ -36,8 +36,19 @@ namespace PartyInvates.Controllers
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
             _logger.LogDebug(guestResponse.ToString());
-            Repositoty.AddResponse(guestResponse);
-            return View("Thanks" , guestResponse);
+            if (ModelState.IsValid)
+            {
+                Repositoty.AddResponse(guestResponse);
+                return View("Thanks", guestResponse);
+
+            }
+            else
+            {
+                return View();
+            }
+
+            
+            
         }
 
         public ViewResult ListResponces()

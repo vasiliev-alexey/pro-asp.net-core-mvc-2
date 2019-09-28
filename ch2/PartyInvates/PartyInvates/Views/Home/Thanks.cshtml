@@ -9,24 +9,20 @@
 <html>
 <head>
     <title>Спасибо, @Model.Name </title>
-    <p>
-        @if (@Model.WillAttend == true)
-        {
-            @:Мы ждем вас - напитки уже охлаждаются
-        }
-        else
-        {
-            @:Ждем в другой раз
-
-        }
-    </p>
-    
-    <p> Жми <a asp-action="ListResponces">сюда</a>   для просмотра пристусвующих</p>
-
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
 </head>
-<body>
-<div>
-      
-</div>
+<body class="text-center">
+<p>
+    @if (Model.WillAttend == true)
+    {
+        @:Мы ждем вас - напитки уже охлаждаются
+    }
+    else
+    {
+        @:Ждем в другой раз
+    }
+</p>
+Жми <a class="nav-link" asp-action="ListResponces">сюда</a>
+для просмотра пристусвующих.
 </body>
 </html>

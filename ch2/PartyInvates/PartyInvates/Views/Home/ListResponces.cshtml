@@ -8,35 +8,38 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+
     <title>title</title>
 </head>
 <body>
+<div class="panel-body">
+    <h2>Список присутствующих</h2>
 
-<h2>Список присутствующих</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+        <th>Имя</th>
+        <th>Почта</th>
+        <th>Телефон</th>
+        </thead>
 
-<table>
-    <thead>
-    <th>Имя</th>
-    <th>Почта</th>
-    <th>Телефон</th>
-    </thead>
+        <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Name</td>
+                <td>@a.Email</td>
+                <td>@a.Phone</td>
 
-    <tbody>
-    @foreach (var a in Model)
-    {
-        <tr>
-            <td>@a.Name</td>
-            <td>@a.Email</td>
-            <td>@a.Phone</td>
+            </tr>
+        }
+        </tbody>
 
-        </tr>
-    }
-    </tbody>
+    </table>
 
-</table>
+    <div>
 
-<div>
-
+    </div>
 </div>
 </body>
 </html>

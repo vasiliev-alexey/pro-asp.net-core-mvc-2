@@ -1,0 +1,22 @@
+﻿@model IEnumerable<string>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Language feature</title>
+</head>
+<body>
+<ul>
+@foreach (string s in Model)
+{
+    <li>@s</li>
+}
+</ul>
+
+</body>
+</html>

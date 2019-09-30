@@ -1,0 +1,27 @@
+﻿@model Product
+@{
+    /*Layout = "_BasicLayout";*/
+    ViewBag.Title = "Имя продукта";
+}
+
+    <div data-product-id="@Model.ProductID" data-stock-level="@ViewBag.StockLevel">
+        <p>Имя продукта @Model.Name></p>
+        <p>Цена продукта @($"{Model.Price:С2}")></p>
+        @*<p>Уровень продаж: @ViewBag.StockLevel</p>*@
+        <p>
+            @switch (ViewBag.StockLevel)
+            {
+                case 0:
+                    @: Out of Stock
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                    <b>Low Stock (@ViewBag.StockLevel)</b>
+                    break;
+                default:
+                    @: @ViewBag.StockLevel in Stock
+                    break;
+            }
+        </p>
+    </div>

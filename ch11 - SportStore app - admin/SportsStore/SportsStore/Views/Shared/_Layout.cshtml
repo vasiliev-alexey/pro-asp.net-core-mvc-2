@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportsStore - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" asp-href-include="~/lib/font-awesome/css/*.css" />
+</head>
+<body>
+
+<div clasв="navbar navbar-inverвe bg-inverse" role="navigation">
+    <a class="navbar-brand" href="#">AV-Production</a>
+    
+    <div class="row">
+        <a class="col navbar-brand" href="#">
+            Магазин спорт товаров</a>
+        <div class="col-4 text-right">
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row m-1 p-1">
+    
+    <div id="categories" class="col-3">
+        @await Component.InvokeAsync( "NavigationMenu" )
+    </div>
+
+    <div class="col-9">
+        @RenderBody()
+    </div>
+</div>
+</body>
+</html>

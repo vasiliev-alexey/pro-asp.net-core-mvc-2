@@ -1,0 +1,44 @@
+﻿@model SportsStore.Models.Domain.Order
+
+<h2>Оформление заказа</h2>
+<p>Введите ваши контактные данные для заказа</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Checkout" method="post">
+    <h3>Доставить по адресу</h3>
+    <div class="form-group">
+        <label>Ваше имя:</label><input asp-for="Name" class="form-control" />
+    </div>
+    <h3>Адресс</h3>
+    <div class="form-group">
+        <label>Line 1:</label><input asp-for="Line1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Line 2:</label><input asp-for="Line2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Line 3:</label><input asp-for="Line3" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Город:</label><input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Субъект:</label><input asp-for="State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Индекс:</label><input asp-for="Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Страна:</label><input asp-for="Country" class="form-control" />
+    </div>
+    <h3>Опции для заказа</h3>
+    <div class="checkbox">
+        <label>
+            <input asp-for="GiftWrap" /> Положить подарок
+        </label>
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Оформить заказ" />
+    </div>
+</form>

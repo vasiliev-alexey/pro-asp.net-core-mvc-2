@@ -1,0 +1,8 @@
+{
+  "name": "myproject",
+  "dependencies": {
+    "fontawesome": "^5.11.2"
+  },
+  "directory": "wwwroot/lib"
+
+}

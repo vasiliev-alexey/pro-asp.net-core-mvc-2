@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 
 namespace UrlsAndRoutes
 {
+    using Microsoft.AspNetCore.Routing;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -25,6 +27,12 @@ namespace UrlsAndRoutes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews(options => options.EnableEndpointRouting = false);
+            services.Configure<RouteOptions>(
+                opt =>
+                    {
+                        opt.AppendTrailingSlash = true;
+                        opt.LowercaseUrls = true;
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +60,12 @@ namespace UrlsAndRoutes
 
             app.UseMvc(
                 routes =>
-                    {/*
+                    {
+                        routes.MapRoute(
+                            name: "areas",
+                            template: "{area:exists}/{controller=Home}/{action=Index}");
+
+                        /*
                         routes.MapRoute(
                             name: "ShopSchema",
                             template: "Shop/{action}",
@@ -60,8 +73,19 @@ namespace UrlsAndRoutes
                         routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
                         routes.MapRoute(name: string.Empty, template: "public/{controller=Home}/{action=Index}");
                     */
+
+                        //routes.MapRoute(
+                        //    name: "NewRoute",
+                        //    template: "App/Do{action}",
+                        //    defaults: new { controller = "Home" });
+
                         routes.MapRoute(name: "ÌyRoute",
-                            template: "{controller=Home}/{action=Index}/{id?}");
+                            template: "{controller=Home}/{action=Index}/{id?}/{*catchall}");
+
+                        routes.MapRoute(
+                            name: "out",
+                            template: "outbound/{controller=Home}/{action=Index}");
+
                     });
         }
     }

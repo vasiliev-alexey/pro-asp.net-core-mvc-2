@@ -1,0 +1,38 @@
+﻿@model string[]
+@{
+    Layout = "_Layout";
+}
+
+@section Header {
+    <div class="bg-success">
+        @foreach (string str in new[] { "Ноmе", "List", "Edit" })
+        {
+            <a class="btn btn-sm btn-primary" asp-action="@str">@str</a>
+
+        }
+    </div>
+}
+
+@*This is а list of fruit names:
+@foreach (string name in Model)
+{
+    <span>
+        <b>@name</b>
+    </span>
+}*@
+
+
+@section Body {
+
+    This is а list of fruit names :
+    @foreach (string name in Model)
+    {
+        <span>
+            <b>@name</b>
+        </span>
+    }
+}
+
+@section Footer {
+    <div class="bg-success"> Это подвал</div>
+}

@@ -1,0 +1,45 @@
+﻿@using UsingViewComponents.Components
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>@ViewBag.Title</title>
+    <link asp-href-include="lib/bootstrap/dist/css/*.min.css" rel="stylesheet"/>
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Index</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+
+
+<body class="m-1 p-1">
+    <div class="bg-primary m-1 p-1">
+        <div class="row text-white">
+            <div class="col-7">
+                <hl>Products</hl>
+            </div>
+            <div class="col-5">
+                @*<div class="bg-info text-center m-1 p-1">City Placeholder</div>*@
+                @*@await Component.InvokeAsync(nameof(CitySummary))*@
+                @*@await Component.InvokeAsync("CitySummary", new { showList = true })*@
+
+                @await Component.InvokeAsync( "ComboComponent");
+            </div>
+        </div>
+    </div>
+    <div class="m-1 p-1">@RenderBody()</div>
+
+    @await Component.InvokeAsync( "PageSize")
+
+</body>
+</html>

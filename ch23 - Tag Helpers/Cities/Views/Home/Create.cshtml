@@ -1,0 +1,32 @@
+﻿@model City
+@{ Layout = "_Layout"; }
+<form method="post">
+    <div class="form-group">
+        <label helper-for="Name"/>
+        <input helper-for="Name"/>
+    </div>
+    <div class="form-group">
+        <label helper-for="Country"/>
+        <input helper-for="Country"/>
+    </div>
+    <div class="form-group">
+        <label helper-for="Population"/>
+        <input helper-for="Population"/>
+    </div>
+    @*<button type="submit" class="btn btn-primary">Add</button>*@
+    @*<button type="submit" bs-button-color="danger">Add</button>
+        <button type="reset" class="btn btn-primary">Reset</button>*@
+    @*<formbutton type="submit" bg-color="danger" />
+        <formbutton type="reset" />
+        
+
+        <a bs-button-color="info" href="/Home/Index">Cancel</a>*@
+
+    <div theme="info">
+        <button type="submit">Add+</button>
+        <button type="reset">Reset-</button>
+        <a href=" /Home/Index">Cancel</a>
+    </div>
+
+
+</form>
